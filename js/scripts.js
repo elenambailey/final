@@ -4,10 +4,9 @@ L.tileLayer('https://api.mapbox.com/styles/v1/elenambailey/clpiyrq9v007901r8efb3
     maxZoom: 19
 }).addTo(map);
 
-fetch('/data/Acequias.geojson') 
+fetch('https://github.com/elenambailey/final/blob/main/data/Acequias.geojson') 
     .then(response => response.json()) 
     .then(data => {
-        // Assuming your GeoJSON data is a valid GeoJSON object, you can add it to the map like this:
         L.geoJSON(data).addTo(map);
     })
     .catch(error => console.error('Error: ', error));
