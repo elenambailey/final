@@ -4,7 +4,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/elenambailey/clpiyrq9v007901r8efb3
     maxZoom: 19
 }).addTo(map);
 
-fetch('https://github.com/elenambailey/final/blob/main/data/Acequias.geojson') 
+fetch('/final/data/Acequias.geojson') 
     .then(response => response.json()) 
     .then(data => {
         L.geoJSON(data).addTo(map);
