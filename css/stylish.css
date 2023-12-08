@@ -1,9 +1,81 @@
-p{
-    color:blue;
+h1{
+    text-align: center;
 }
 
 #map { 
-    height: 1500px; 
-    width: 500px;
+    height: 750px; 
+    width: 750px;
+    position: absolute;
+    top: 5em;
+    left: 5em;
+    text-align: center;
 
+}
+
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+button {
+    position: absolute;
+    left: 850px;
+    background-color: lightblue;
+    font-size: 12px;
+    border-radius: 8px;
+}
+#aseq {
+    position: absolute;
+    left: 960px;
+    background-color: lightblue;
+    font-size: 12px;
+    border-radius: 8px;
+}
+#reset {
+    position: absolute;
+    left: 1040px;
+    background-color: lightblue;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+* {box-sizing: border-box;}
+
+.img-comp-container {
+  position: relative;
+  height: 400px; 
+  left: 850px;
+  top: 330px;
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.img-comp-img img {
+  display: block;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  width: 40px;
+  height: 40px;
+  background-color: #020202;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+p {
+    position: absolute;
+    left: 850px;
+    top: 110px
+}
+#eleb {
+    position: absolute;
+    left: 850px;
+    top: 190px
 }
