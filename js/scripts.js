@@ -26,9 +26,9 @@ const basemapLayers = {
 
 L.control.layers(basemapLayers).addTo(map);
 
-const fetchAcequ = fetch('/data/Acequias.geojson').then(response => response.json());
-const fetchResev = fetch('/data/reservoirs_NM.geojson').then(response => response.json());
-const fetchSurfwat = fetch('/data/SurfaceWaterRiverReach_NM.geojson').then(response => response.json());
+const fetchAcequ = fetch('/final/data/Acequias.geojson').then(response => response.json());
+const fetchResev = fetch('/final/data/reservoirs_NM.geojson').then(response => response.json());
+const fetchSurfwat = fetch('/final/data/SurfaceWaterRiverReach_NM.geojson').then(response => response.json());
 
 Promise.all([fetchAcequ, fetchResev, fetchSurfwat])
     .then(([acequData, resevData, surfwatData]) => {
