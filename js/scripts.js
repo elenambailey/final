@@ -35,7 +35,7 @@ Promise.all([fetchAcequ, fetchResev, fetchSurfwat])
         Acequ = L.geoJSON(acequData).addTo(map);
 
         damIcon = L.icon({
-            iconUrl: '/data/dam.png',
+            iconUrl: '/final/data/dam.png',
             iconSize: [38, 38],
             popupAnchor: [-3, -76]
         });
