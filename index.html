@@ -9,14 +9,80 @@
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
 
+     <script>
+        function compare() {
+          var x, i;
+          x = document.getElementsByClassName("img-comp-overlay");
+          for (i = 0; i < x.length; i++) {
+            compareImages(x[i]);
+          }
+          function compareImages(img) {
+            var slider, img, clicked = 0, w, h;
+            w = img.offsetWidth;
+            h = img.offsetHeight;
+            img.style.width = (w / 2) + "px";
+        
+            slider = document.createElement("DIV");
+            slider.setAttribute("class", "img-comp-slider");
+            img.parentElement.insertBefore(slider, img);
+            slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+            slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+            
+            slider.addEventListener("mousedown", slideReady);
+            window.addEventListener("mouseup", slideFinish);
+         
+            function slideReady(e) {
+              e.preventDefault();
+              clicked = 1;
+              window.addEventListener("mousemove", slideMove);
+              window.addEventListener("touchmove", slideMove);
+            }
+            function slideFinish() {
+              clicked = 0;
+            }
+            function slideMove(e) {
+              var pos;
+              if (clicked == 0) return false;
+              pos = getCursorPos(e)
+              if (pos < 0) pos = 0;
+              if (pos > w) pos = w;
+              slide(pos);
+            }
+            function getCursorPos(e) {
+              var a, x = 0;
+              e = (e.changedTouches) ? e.changedTouches[0] : e;
+              a = img.getBoundingClientRect();
+              x = e.pageX - a.left;
+              x = x - window.pageXOffset;
+              return x;
+            }
+            function slide(x) {
+              img.style.width = x + "px";
+              slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+            }
+          }
+        }
+        </script>
+    
 </head>
 
 <body>
-    <h1>New Mexico Water</h1>
+    <h1>New Mexico's Water</h1>
     <div id="map"></div>
-    
+    <button onclick="zoom()">Elephant Butte</button>
+    <button id="aseq" onclick="zoom_Ace()">Acequias</button>
+    <button id="reset" onclick="zoom_res()">Reset Map</button>
+    <p> Acequias are small canals which transport water for the purpose of irrigation. They have become culturally significant as well as essential to the transportation of water since Spanish Colonialism of the region. </p>
+    <p id="eleb">Elephant Butte is a reservoir located in southern New Mexico along the Rio Grande. It is a clear example of the overuse of water in this region as well as the ongoing drought. The portion of the Rio Grande which lies south of this dam remains completely dry for nine to ten months of the year and all municipal and agricultural water during those months comes from groundwater sources.  </p>
+    <div class="img-comp-container">
+        <div class="img-comp-img">
+          <img src="/final/data/elebutte94.jpg" width="550" height="400">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="/final/data/elebutte13.jpg" width="550" height="400">
+        </div>
+      </div>
+    <script>compare();</script>
 </body>
 
 <script src="js/scripts.js" defer></script>
-
-
