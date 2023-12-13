@@ -10,7 +10,7 @@ var base_sat = L.tileLayer('https://api.mapbox.com/styles/v1/elenambailey/clpiyr
    maxZoom: 19
 }).addTo(map);
 
-var base_green = L.tileLayer('https://api.mapbox.com/styles/v1/elenambailey/clpt9ssas00fa01r87wj369gu/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxlbmFtYmFpbGV5IiwiYSI6ImNsb2l5cHY3ZjFoNGgybHFlNGUzb2JkeHAifQ.SvnYKSC33_OLXyhtkhX47g', {
+var base_green = L.tileLayer('https://api.mapbox.com/styles/v1/elenambailey/clq48t40w00of01pxavajfifp/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxlbmFtYmFpbGV5IiwiYSI6ImNsb2l5cHY3ZjFoNGgybHFlNGUzb2JkeHAifQ.SvnYKSC33_OLXyhtkhX47g', {
    maxZoom: 19
 }).addTo(map);
 
